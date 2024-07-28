@@ -10,3 +10,4 @@ class Users {
 
 let user1 = new Users("Jafar", "Khan", 20);
 console.log(user1.fullName());
+console.log(user1);
