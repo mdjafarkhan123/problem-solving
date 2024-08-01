@@ -36,3 +36,19 @@ getFrequencies([1, 2, 3, 3, 2]); // ➞ { "1": 1, "2": 2, "3": 2 }
 getFrequencies([true, false, true, false, false]); //➞ { true: 2, false: 3 }
 
 getFrequencies([]); //➞ {}
+
+
+
+// ========= Another way ========
+function getFrequencies(arr) {
+    let ob = {};
+    for (let value of arr) {
+        if (ob[value]) {
+            ob[value]++;
+        } else {
+            ob[value] = 1;
+        }
+    }
+
+    console.log(ob);
+}
