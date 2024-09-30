@@ -7,7 +7,7 @@ isPandigital(98140723568910) ➞ true
 isPandigital(90864523148909) ➞ false
 // 7 is missing.
 
-isPandigital(112233445566778899) ➞ false
+isPandigital(112233445566778899) ➞ false 
 */
 
 function isPandigital(int) {

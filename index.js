@@ -1,32 +1,19 @@
-function getTotalPrice(arr) {
-    let result = arr.reduce((total, item) => {
-        total += item.price * item.quantity;
-        return total;
-    }, 0);
+function returnUnique(arr) {
+    let str = [];
+    arr.forEach((element, index) => {
+        if (
+            arr.indexOf(element, index + 1) == -1 &&
+            arr.indexOf(element) == index
+        ) {
+            str.push(element);
+        }
+    });
 
-    console.log(Number.parseFloat(result.toFixed(2)));
+    console.log(str);
 }
 
-getTotalPrice([{ product: "Milk", quantity: 1, price: 1.5 }]); //➞ 1.5
+returnUnique([1, 9, 8, 8, 7, 6, 1, 6]);
 
-getTotalPrice([
-    { product: "Milk", quantity: 1, price: 1.5 },
-    { product: "Cereals", quantity: 1, price: 2.5 },
-]); //➞ 4
+returnUnique([5, 5, 2, 4, 4, 4, 9, 9, 9, 1]);
 
-
-getTotalPrice([{ product: "Milk", quantity: 3, price: 1.5 }]); //➞ 4.5
-
-
-getTotalPrice([
-    { product: "Milk", quantity: 1, price: 1.5 },
-    { product: "Eggs", quantity: 12, price: 0.1 },
-    { product: "Bread", quantity: 2, price: 1.6 },
-    { product: "Cheese", quantity: 1, price: 4.5 },
-]); //➞ 10.4
-
-
-getTotalPrice([
-    { product: "Chocolate", quantity: 1, price: 0.1 },
-    { product: "Lollipop", quantity: 1, price: 0.2 },
-]); //➞ 0.3
+returnUnique([9, 5, 6, 8, 7, 7, 1, 1, 1, 1, 1, 9, 8]);
