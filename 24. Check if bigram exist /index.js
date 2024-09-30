@@ -1,29 +1,12 @@
-/* 
-In each input array, every number repeats at least once, except for two. Write a function that returns the two unique numbers.
-
-Examples
-returnUnique([1, 9, 8, 8, 7, 6, 1, 6]) ➞ [9, 7]
-
-returnUnique([5, 5, 2, 4, 4, 4, 9, 9, 9, 1]) ➞ [2, 1]
-
-returnUnique([9, 5, 6, 8, 7, 7, 1, 1, 1, 1, 1, 9, 8]) ➞ [5, 6]
-Notes
-Keep the same ordering in the output.
-*/
-
-function returnUnique(arr) {
-    let str = [];
-    arr.forEach((element, index) => {
-        if (
-            arr.indexOf(element, index + 1) == -1 &&
-            arr.indexOf(element) == index
-        ) {
-            str.push(element);
-        }
+function canFind(bigrams, words) {
+    let result = bigrams.every((bigram) => {
+        return words.some((word) => word.includes(bigram));
     });
 
-    console.log(str);
+    console.log(result);
 }
-returnUnique([1, 9, 8, 8, 7, 6, 1, 6]);
-returnUnique([5, 5, 2, 4, 4, 4, 9, 9, 9, 1]);
-returnUnique([9, 5, 6, 8, 7, 7, 1, 1, 1, 1, 1, 9, 8]);
+
+canFind(["at", "be", "th", "au"], ["beautiful", "the", "hat"]);
+canFind(["ay", "be", "ta", "cu"], ["maybe", "beta", "abet", "course"]);
+canFind(["th", "fo", "ma", "or"], ["the", "many", "for", "forest"]);
+canFind(["oo", "mi", "ki", "la"], ["milk", "chocolate", "cooks"]);
