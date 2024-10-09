@@ -52,7 +52,7 @@ function wordedMath(sentence) {
                     numbers[sentence[0].toLowerCase()] -
                     numbers[sentence[2].toLowerCase()];
             }
-            break;
+
     }
 
     console.log(words[result][0].toLocaleUpperCase() + words[result].slice(1));
